@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
-import TriaxialData
+from triaxial import TriaxialData
 
 class DataLoad:
   TRAIN = "train"
