@@ -1,8 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Activity Recognition (HAR)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        footer p a:link { 
+            color: #0000EE;
+            padding: 10px;
+            font-style: italic;
+        }
+        footer p a:hover {
+            color: red
+        }
+        footer p a:visited, footer p a:active {
+            color: #551A8B; 
+        }
+        main {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
 <body>
 
-<h1>Human Activity Recognition (HAR) Project</h1>
+<header>
+    <h1>Human Activity Recognition (HAR)</h1>
+</header>
 
+<main>
+    <!-- Table1: Data Overview -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" style="font-size: 1.5em;"">Inertial Dataset</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>body_acc_x</td>
+                <td>body acceleration signal for x-axis. Body acceleration signals obtained by subtracting gravity from total acceleration</td>
+            </tr>
+            <tr>
+                <td>body_acc_y</td>
+                <td>body acceleration signal for y-axis</td>
+            </tr>
+            <tr>
+                <td>body_acc_y</td>
+                <td>body acceleration signal for z-axis</td>
+            </tr>
+            <tr>
+                <td>body_gyro_x</td>
+                <td>angular velocity for x-axis</td>
+            </tr>
+            <tr>
+                <td>body_gyro_y</td>
+                <td>angular velocity for y-axis</td>
+            </tr>
+            <tr>
+                <td>body_gyro_z</td>
+                <td>angular velocity for z-axis</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><span style="font-weight: bold;">Description:</span><span style="font-style: italic;"> dataset is multivariate (tri-axial), time-series data from an accelerometer and gyroscope sampled while volunteer subjects performed one of six activities of daily life (ADL).</span></td></td>
+                <!--<td colspan="2">Source: <a href="https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI Machine Learning Repository</a></td>-->
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- Table2: ML Models -->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">Models Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CNN</td>
+                <td>Keras <a href="https://keras.io/guides/sequential_model/">Sequential</a> model</td>
+                <td>Simple architecture with linear sequence of layers for classification</td>
+                <td>Accuracy Score: </td>
+            </tr>
+            <tr>
+                <td>Random Forest</td>
+                <td>A <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">random forest classifier</a> from sklearn.ensemble</td>
+                <td>Estimator fiting decision tree classifiers on sub-samples of the dataset that then uses averaging to improve predictive accuracy</td>
+                <td>Accuracy Score: </td>
+            </tr>
+            <!--
+            <tr>
+                <td>Model 3</td>
+                <td>Details 3</td>
+                <td>Description 3</td>
+                <td>Accuracy 3</td>
+            </tr>
+            -->
+        </tbody>
+    </table>
+</main>
+    
+        
+<footer>
+    <p><a href="https://github.com/bmf87/har">HAR Project Repo</a></p>
+</footer>
+    
+ 
 </body>
 </html>
