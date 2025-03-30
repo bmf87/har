@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
-from triaxial import TriaxialData
+from triaxialdata import TriaxialData
 
 class DataLoad:
   TRAIN = "train"
@@ -12,9 +12,9 @@ class DataLoad:
     self.data_dir = data_dir
 
   def load_file(self, filepath):
-    '''
+    """
     Load single file for model fit/eval into 1D array
-    '''
+    """
     try:
       df = pd.read_csv(filepath, delimiter='\\s+', header=None)
     except FileNotFoundError as err:
@@ -22,13 +22,13 @@ class DataLoad:
     return df.values
 
   def load_xfiles(self, xfilepath, files):
-    '''
+    """
     Load files (test or train) for model fit/eval into 3D array
 
     Returns: column matrix: first two axes correspond to rows and columns of original arrays
       Third axis corresponds to the depth of the array, i.e. number of files
        in the group (0-5 for x,y,z (acc) + x,y,z (gyro))
-    '''
+    """
     loaded = list()
 
     for f in files:
@@ -42,11 +42,11 @@ class DataLoad:
     return loaded
 
   def load_dataset_type(self, type):
-    '''
+    """
     Load dataset type: test or training files including the target labels
     
     Returns: 3D array of X, 1D array of y 
-    '''
+    """
     xfilepath = self.data_dir + '/body/'
 
     # 6x files ttl: 3x body_acc, 3x body_gyro
@@ -63,13 +63,13 @@ class DataLoad:
     return X, y
 
   def load_all_datasets(self, show_results=False):
-    '''
+    """
     Convenience function returning all data for train and test datasets.
 
     Returns: TriaxialData for both train and test datasets
       TriaxialData is a custom object encapsulating the datasets and providing data access ease.
 
-    '''
+    """
     assert os.path.exists(self.data_dir), f"{self.data_dir} must be mounted to proceed with data loading!"
     
     X_train, y_train = self.load_dataset_type(DataLoad.TRAIN)
