@@ -6,6 +6,7 @@ from triaxial import TriaxialData
 class DataLoad:
   TRAIN = "train"
   TEST = "test"
+  TEST2 = "test2"
 
   def __init__(self, data_dir):
     self.data_dir = data_dir
