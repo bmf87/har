@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
-from triaxial.TriaxialData import TriaxialData
+from triaxial import TriaxialData
 
 class DataLoad:
   TRAIN = "train"
@@ -73,14 +73,17 @@ class DataLoad:
     
     X_train, y_train = self.load_dataset_type(DataLoad.TRAIN)
     X_test, y_test = self.load_dataset_type(DataLoad.TEST)
+    X_test2, y_test2 = self.load_dataset_type(DataLoad.TEST2)
 
     # zero-offset target/class to match label_map
     y_train = y_train - 1
     y_test = y_test - 1
+    y_test2 = y_test2 - 1
 
     # flatten y array to 1D
     y_train = y_train.flatten()
     y_test = y_test.flatten()
+    y_test2 = y_test2.flatten()
 
     if show_results:
       train_obs, test_obs = X_train.shape[0], X_test.shape[0]
@@ -88,11 +91,13 @@ class DataLoad:
       print(
         f"""Datasets Loaded => Split: train: {train_percent}, test: {100 - train_percent}\n
         [Training Set]:\n\tX_train {X_train.shape}, y_train {y_train.shape}
-        [Test Set]:\n\tX_test {X_test.shape}, y_test {y_test.shape}"""
+        [Test Set]:\n\tX_test {X_test.shape}, y_test {y_test.shape}
+        [Test Set2]:\n\tX_test2 {X_test2.shape}, y_test2 {y_test2.shape}"""
       )
 
     # instantiate TriaxialData for easy data access
     taxial_train = TriaxialData(X_train, y_train)
     taxial_test = TriaxialData(X_test, y_test)
+    taxial_test2 = TriaxialData(X_test2, y_test2)
 
-    return taxial_train, taxial_test
+    return taxial_train, taxial_test, taxial_test2
