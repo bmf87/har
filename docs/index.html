@@ -1,134 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Human Activity Recognition (HAR)</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAR Project</title>
+    <link rel="stylesheet" href="./skeletabs.css" />
+    <link rel="stylesheet" href="./index.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        header, footer {
-            background-color: #f4f4f4;
-            padding: 10px;
-            text-align: center;
-        }
-        footer p a:link { 
-            color: #0000EE;
-            padding: 10px;
-            font-style: italic;
-        }
-        footer p a:hover {
-            color: red
-        }
-        footer p a:visited, footer p a:active {
-            color: #551A8B; 
-        }
-        main {
-            margin: 20px 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        th, td {
-            padding: 8px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-        }
+      p.title { font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; }
+      .info-header { font-style: italic; font-size: 0.9em; }
+      .tab-header { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bolder; }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="drawer">
+      <p class="title">
+        Human Activity Recognition (HAR) and Monitoring
+      </p>
+      <br/><br/>
 
-<header>
-    <h1>Human Activity Recognition (HAR)</h1>
-</header>
-
-<main>
-    <!-- Table1: Data Overview -->
-    <table>
-        <thead>
-            <tr>
-                <th colspan="2" style="font-size: 1.5em;"">Inertial Dataset</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>body_acc_x</td>
-                <td>body acceleration signal for x-axis. Body acceleration signals obtained by subtracting gravity from total acceleration</td>
-            </tr>
-            <tr>
-                <td>body_acc_y</td>
-                <td>body acceleration signal for y-axis</td>
-            </tr>
-            <tr>
-                <td>body_acc_y</td>
-                <td>body acceleration signal for z-axis</td>
-            </tr>
-            <tr>
-                <td>body_gyro_x</td>
-                <td>angular velocity for x-axis</td>
-            </tr>
-            <tr>
-                <td>body_gyro_y</td>
-                <td>angular velocity for y-axis</td>
-            </tr>
-            <tr>
-                <td>body_gyro_z</td>
-                <td>angular velocity for z-axis</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2"><span style="font-weight: bold;">Description:</span><span style="font-style: italic;"> dataset is multivariate (tri-axial), time-series data from an accelerometer and gyroscope sampled while volunteer subjects performed one of six activities of daily life (ADL).</span></td></td>
-                <!--<td colspan="2">Source: <a href="https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI Machine Learning Repository</a></td>-->
-            </tr>
-        </tfoot>
-    </table>
-
-
-    <!-- Table2: ML Models -->
-    <table>
-        <thead>
-            <tr>
-                <th colspan="4">Models Used</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CNN</td>
-                <td>Keras <a href="https://keras.io/guides/sequential_model/">Sequential</a> model</td>
-                <td>Simple architecture with linear sequence of layers for classification</td>
-                <td>Accuracy Score: </td>
-            </tr>
-            <tr>
-                <td>Random Forest</td>
-                <td>A <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">random forest classifier</a> from sklearn.ensemble</td>
-                <td>Estimator fiting decision tree classifiers on sub-samples of the dataset that then uses averaging to improve predictive accuracy</td>
-                <td>Accuracy Score: </td>
-            </tr>
-            <!--
-            <tr>
-                <td>Model 3</td>
-                <td>Details 3</td>
-                <td>Description 3</td>
-                <td>Accuracy 3</td>
-            </tr>
-            -->
-        </tbody>
-    </table>
-</main>
-    
+      <!-- Tab Layout -->
+      <div id="outer" class="skltbs-theme-light" data-skeletabs='{ "startIndex": 1 }'>
+        <ul class="skltbs-tab-group">
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">Introduction</span></button>
+          </li>
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">Data sets</span></button>
+          </li>
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">EDA</span></button>
+          </li>
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">Feature Engineering</span></button>
+          </li>
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">Modeling</span></button>
+          </li>
+          <li class="skltbs-tab-item">
+            <button class="skltbs-tab"><span class="tab-header">Conclusion</span></button>
+          </li>
+        </ul>
+        <div class="skltbs-panel-group">
+          <div class="skltbs-panel">
+            <div id="middle" data-skeletabs>
+              <ul class="skltbs-tab-group">
+                <li class="skltbs-tab-item">
+                  <button class="skltbs-tab"><span class="tab-header">Abstract</span></button>
+                </li>
+                <li class="skltbs-tab-item">
+                  <button class="skltbs-tab"><span class="tab-header">Problem Overview</span></button>
+                </li>
+                <li class="skltbs-tab-item">
+                  <button class="skltbs-tab"><span class="tab-header">Research Question</span></button>
+                </li>
+              </ul>
+            <div class="skltbs-panel-group">
+              <div class="skltbs-panel">
+                <p>
+                    Abstract: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusantium iure, esse ratione ipsum
+                    laborum inventore consequuntur, dignissimos dolore perspiciatis alias aspernatur culpa. Ducimus
+                    saepe aliquid repudiandae quibusdam numquam dolor!
+                 </p>
+              </div>
+              <div class="skltbs-panel">
+                <p>
+                    Problem Overview: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusantium iure, esse ratione ipsum
+                    laborum inventore consequuntur, dignissimos dolore perspiciatis alias aspernatur culpa. Ducimus
+                    saepe aliquid repudiandae quibusdam numquam dolor!
+                </p>
+              </div>
+              <div class="skltbs-panel">
+                <p>
+                    Research Question: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni sapiente deleniti, vel veniam
+                    molestias dolor minima esse voluptatibus totam molestiae cum fugit blanditiis beatae, itaque maiores
+                    iusto, consectetur asperiores!
+                </p>
+              </div>
+            </div>
+           </div>
+          </div>
+          <div class="skltbs-panel"> <!-- DATASETS -->
+            <p>
+              DATASETS: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusantium iure, esse ratione ipsum laborum
+              inventore consequuntur, dignissimos dolore perspiciatis alias aspernatur culpa. Ducimus saepe aliquid
+              repudiandae quibusdam numquam dolor!
+            </p>
+          </div>
+          <div class="skltbs-panel"> <!-- EDA -->
+            <p>
+              EDA: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni sapiente deleniti, vel veniam
+              molestias dolor minima esse voluptatibus totam molestiae cum fugit blanditiis beatae, itaque maiores
+              iusto, consectetur asperiores!
+            </p>
+            <p>
+              Ad assumenda totam provident quae facilis molestiae porro dolore, ab quod, commodi accusamus dignissimos
+              repudiandae? Dolore tenetur, veniam illo recusandae deserunt itaque quas maiores saepe ipsa iste nesciunt,
+              magni doloribus!
+            </p>
+          </div>
+          <div class="skltbs-panel"> <!-- Feature Engineering -->
+            <p>
+              FE: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore magni sapiente deleniti, vel veniam
+              molestias dolor minima esse voluptatibus totam molestiae cum fugit blanditiis beatae, itaque maiores
+              iusto, consectetur asperiores!
+            </p>
+            <p>
+              Ad assumenda totam provident quae facilis molestiae porro dolore, ab quod, commodi accusamus dignissimos
+              repudiandae? Dolore tenetur, veniam illo recusandae deserunt itaque quas maiores saepe ipsa iste nesciunt,
+              magni doloribus!
+            </p>
+          </div>
+          <div class="skltbs-panel"> <!-- Modeling -->
+            <p>
+              MODELING: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum voluptate quo ea commodi totam aut aliquam
+              quasi, corrupti nulla, eligendi ullam quas deserunt, sequi praesentium tempore quidem dolor. Sequi,
+              voluptatum.
+            </p>
+            <p>
+              Optio tempore sunt nostrum repellat temporibus architecto inventore amet labore et quo. Molestias et
+              similique, illum autem repudiandae maiores tempora at possimus inventore amet deleniti nisi sunt?
+              Adipisci, dolorum rem!
+            </p>
+          </div>
+          <div class="skltbs-panel"> <!-- Conclusion -->
+            <p>
+              CONCLUSION: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum voluptate quo ea commodi totam aut aliquam
+              quasi, corrupti nulla, eligendi ullam quas deserunt, sequi praesentium tempore quidem dolor. Sequi,
+              voluptatum.
+            </p>
+            <p>
+              Optio tempore sunt nostrum repellat temporibus architecto inventore amet labore et quo. Molestias et
+              similique, illum autem repudiandae maiores tempora at possimus inventore amet deleniti nisi sunt?
+              Adipisci, dolorum rem!
+            </p>
+          </div>
+        </div>
+      </div> <!-- Closes outer -->
+      
+      <!-- Outside Tab Layout -->
+      <p>
+        <span class="info-header">Salient Links: </span> 
         
-<footer>
-    <p><a href="https://github.com/bmf87/har">HAR Project Repo</a></p>
-</footer>
-    
- 
-</body>
+      </p>
+      <p>
+        <span class="info-header">Contact: </span> 
+
+      </p>
+    </div> <!-- Closes drawer -->
+
+
+    <script src="./jquery.wordpress.js"></script>
+    <!-- provided by webpack -->
+    <script src="./skeletabs.js"></script>
+    <!-- test script -->
+    <script src="./index.js"></script>
+  </body>
 </html>
