@@ -5,4 +5,4 @@ Physical inactivity increases the risk of adverse health conditions like coronar
 #### Purpose:
 This repository contains source code for research leveraging raw inertial sensor data to predict human activity. The hyposthesis here is that we can simplify traditional HAR approaches that require extensive expertise in signal processing and feature engineering and use raw inertial sensor data to accurate predict low-intensity human activity.
 
-Vist <a href="" >here</a>to read more
+Vist <a href="" >here</a> to read more
